@@ -124,8 +124,11 @@ LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 LOGIN_URL = reverse_lazy('login')
 LOGOUT_URL = reverse_lazy('logout')
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#set email information
 EMAIL_HOST = 'smtp.126.com'
 EMAIL_HOST_USER = 'xia_751405162@126.com'
 EMAIL_HOST_PASSWORD = '751405162a'
 EMAIL_PORT = 25
 DEFAULT_FROM_EMAIL = 'xiacaihusang <xia_751405162@126.com>'
+MEDIA_URL = '/media/'
+MDEIA_ROOT =  os.path.join(BASE_DIR,'media/')

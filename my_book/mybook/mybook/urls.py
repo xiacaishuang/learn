@@ -24,6 +24,8 @@ from django.contrib.auth.views import password_reset
 from django.contrib.auth.views import password_reset_done
 from django.contrib.auth.views import password_reset_confirm
 from django.contrib.auth.views import password_reset_complete
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -49,5 +51,10 @@ urlpatterns = [
         password_reset_complete,
         name='password_reset_complete'),
     url(r'^$', views.dashboard, name='dashboard'),
-
+    url(r'^register/$',views.register,name='register'),
+    url(r'^edit/$', views.edit, name='edit'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                        document_root=settings.MEDIA_ROOT)

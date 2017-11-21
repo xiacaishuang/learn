@@ -25,6 +25,9 @@
      <li {% if section == "resetpasword" %}class="selected"{% endif %}>
        <a href="{% url "password_reset" %}">Reset Password</a>
      </li>
+     <li {% if section == "eitprofile" %}class="selected"{% endif %}>
+       <a href="{% url "edit" %}">Edit Profile</a>
+     </li>
     </ul>
    {% endif %}
    <span class="user">
@@ -33,9 +36,21 @@
        <a href="{% url "logout" %}">Logout</a>
      {% else %}
        <a href="{% url "login" %}">Log-in</a>
+       <a href="{% url "register" %}">Sign-up</a>
      {% endif %}
   </span>
 </div>
+
+{% if messages %}
+ <ul class="messages">
+   {% for message in messages %}
+     <li class="{{ message.tags }}">
+    {{ message|safe }}
+        <a href="#" class="close"> </a>
+     </li>
+   {% endfor %}
+ </ul>
+{% endif %}
 
         <div id="content">
             {% block content %}
