@@ -132,3 +132,7 @@ EMAIL_PORT = 25
 DEFAULT_FROM_EMAIL = 'xiacaihusang <xia_751405162@126.com>'
 MEDIA_URL = '/media/'
 MDEIA_ROOT =  os.path.join(BASE_DIR,'media/')
+AUTHENTICATION_BACKENDS = (
+   'django.contrib.auth.backends.ModelBackend',
+   'account.authentication.EmailAuthBackend',
+)
